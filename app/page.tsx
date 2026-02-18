@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { callAIAgent } from '@/lib/aiAgent'
 import { useLyzrAgentEvents } from '@/lib/lyzrAgentEvents'
-import AgentActivityPanel from '@/components/AgentActivityPanel'
+import { AgentActivityPanel } from '@/components/AgentActivityPanel'
 import { Button } from '@/components/ui/button'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -23,28 +23,6 @@ import { FiMail, FiUser, FiSend, FiSearch, FiPlus, FiSettings, FiBarChart2, FiEd
 const OUTREACH_COORDINATOR_ID = '6996242277cd235a2c9b44ee'
 const EMAIL_SENDER_ID = '6996245d35f3c2890b9ba1ed'
 const RESPONSE_TRACKER_ID = '6996245da552b02becc38df5'
-
-// ── Theme ───────────────────────────────────────────────────────────
-const THEME_VARS: React.CSSProperties & Record<string, string> = {
-  '--background': '35 29% 95%',
-  '--foreground': '30 22% 14%',
-  '--card': '35 29% 92%',
-  '--card-foreground': '30 22% 14%',
-  '--primary': '27 61% 26%',
-  '--primary-foreground': '35 29% 98%',
-  '--secondary': '35 20% 88%',
-  '--secondary-foreground': '30 22% 18%',
-  '--accent': '43 75% 38%',
-  '--accent-foreground': '35 29% 98%',
-  '--muted': '35 15% 85%',
-  '--muted-foreground': '30 20% 45%',
-  '--border': '27 61% 26%',
-  '--destructive': '0 84% 60%',
-  '--sidebar-background': '35 25% 90%',
-  '--sidebar-foreground': '30 22% 14%',
-  '--sidebar-border': '35 20% 85%',
-  '--sidebar-primary': '27 61% 26%',
-}
 
 // ── Interfaces ──────────────────────────────────────────────────────
 interface PersonalizationBrief {
@@ -476,7 +454,6 @@ export default function Page() {
 
       if (result?.success) {
         const data = result?.response?.result || {}
-        const sendStatus = data?.send_status || 'sent'
         const sentEmail = data?.sent_email || {}
         const followUpDrafts = Array.isArray(data?.follow_up_drafts) ? data.follow_up_drafts : []
         const summary = data?.summary || ''
@@ -634,7 +611,7 @@ export default function Page() {
 
   // ── Render ────────────────────────────────────────────────────────
   return (
-    <div style={THEME_VARS} className="min-h-screen bg-[hsl(35,29%,95%)] text-[hsl(30,22%,14%)] flex font-sans">
+    <div className="min-h-screen bg-[hsl(35,29%,95%)] text-[hsl(30,22%,14%)] flex font-sans">
       {/* ── Sidebar ────────────────────────────────────────────── */}
       <aside className="w-[260px] min-h-screen bg-[hsl(35,25%,90%)] border-r border-[hsl(35,20%,85%)] flex flex-col flex-shrink-0">
         {/* Logo */}
