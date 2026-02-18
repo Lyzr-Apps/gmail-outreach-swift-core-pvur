@@ -1,0 +1,58 @@
+{
+  "agent_name": "Outreach Coordinator",
+  "agent_id": "6996242277cd235a2c9b44ee",
+  "description": "Coordinates lead research and email drafting sub-agents; aggregates personalized email draft and follow-up sequence for user review",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "personalization_brief": {
+      "company_overview": "string",
+      "recent_news": "string",
+      "industry_trends": "string",
+      "role_analysis": "string",
+      "conversation_hooks": [
+        "string"
+      ],
+      "personalization_summary": "string"
+    },
+    "initial_email": {
+      "subject": "string",
+      "body": "string"
+    },
+    "follow_ups": [
+      {
+        "sequence_number": "number",
+        "subject": "string",
+        "body": "string",
+        "send_after_days": "number"
+      }
+    ],
+    "outreach_summary": "string"
+  },
+  "example_response": {
+    "personalization_brief": {
+      "company_overview": "sample string",
+      "recent_news": "sample string",
+      "industry_trends": "sample string",
+      "role_analysis": "sample string",
+      "conversation_hooks": [
+        "sample string"
+      ],
+      "personalization_summary": "sample string"
+    },
+    "initial_email": {
+      "subject": "sample string",
+      "body": "sample string"
+    },
+    "follow_ups": [
+      {
+        "sequence_number": 0,
+        "subject": "sample string",
+        "body": "sample string",
+        "send_after_days": 0
+      }
+    ],
+    "outreach_summary": "sample string"
+  }
+}

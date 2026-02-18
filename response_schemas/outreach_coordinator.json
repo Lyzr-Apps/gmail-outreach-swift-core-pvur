@@ -1,0 +1,56 @@
+{
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "OutreachCoordinatorResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "personalization_brief": {
+            "type": "object",
+            "properties": {
+              "company_overview": { "type": "string" },
+              "recent_news": { "type": "string" },
+              "industry_trends": { "type": "string" },
+              "role_analysis": { "type": "string" },
+              "conversation_hooks": { "type": "array", "items": { "type": "string" } },
+              "personalization_summary": { "type": "string" }
+            },
+            "required": ["company_overview", "recent_news", "industry_trends", "role_analysis", "conversation_hooks", "personalization_summary"],
+            "additionalProperties": false
+          },
+          "initial_email": {
+            "type": "object",
+            "properties": {
+              "subject": { "type": "string" },
+              "body": { "type": "string" }
+            },
+            "required": ["subject", "body"],
+            "additionalProperties": false
+          },
+          "follow_ups": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sequence_number": { "type": "number" },
+                "subject": { "type": "string" },
+                "body": { "type": "string" },
+                "send_after_days": { "type": "number" }
+              },
+              "required": ["sequence_number", "subject", "body", "send_after_days"],
+              "additionalProperties": false
+            }
+          },
+          "outreach_summary": { "type": "string" }
+        },
+        "required": ["personalization_brief", "initial_email", "follow_ups", "outreach_summary"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

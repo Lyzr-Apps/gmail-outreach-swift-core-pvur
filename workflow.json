@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    { "id": "input_node", "type": "Input", "label": "Lead Details Input", "nodeCategory": "input" },
+    { "id": "outreach_coordinator", "type": "Agent", "label": "Outreach Coordinator", "nodeCategory": "agent" },
+    { "id": "lead_personalization", "type": "Agent", "label": "Lead Personalization Agent", "nodeCategory": "agent" },
+    { "id": "email_drafting", "type": "Agent", "label": "Email Drafting Agent", "nodeCategory": "agent" },
+    { "id": "email_sender", "type": "Agent", "label": "Email Sender Agent", "nodeCategory": "agent" },
+    { "id": "response_tracker", "type": "Agent", "label": "Response Tracker Agent", "nodeCategory": "agent" },
+    { "id": "output_node", "type": "Output", "label": "Output", "nodeCategory": "end" }
+  ],
+  "edges": [
+    { "source": "input_node", "target": "outreach_coordinator" },
+    { "source": "outreach_coordinator", "target": "lead_personalization" },
+    { "source": "outreach_coordinator", "target": "email_drafting" },
+    { "source": "outreach_coordinator", "target": "email_sender" },
+    { "source": "email_sender", "target": "response_tracker" },
+    { "source": "response_tracker", "target": "output_node" }
+  ]
+}

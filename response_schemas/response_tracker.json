@@ -1,0 +1,47 @@
+{
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "ResponseTrackerResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "tracked_leads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lead_name": { "type": "string" },
+                "email": { "type": "string" },
+                "status": { "type": "string" },
+                "last_response_date": { "type": "string" },
+                "response_summary": { "type": "string" },
+                "recommended_action": { "type": "string" }
+              },
+              "required": ["lead_name", "email", "status", "last_response_date", "response_summary", "recommended_action"],
+              "additionalProperties": false
+            }
+          },
+          "engagement_summary": {
+            "type": "object",
+            "properties": {
+              "total_tracked": { "type": "number" },
+              "replied": { "type": "number" },
+              "no_response": { "type": "number" },
+              "bounced": { "type": "number" }
+            },
+            "required": ["total_tracked", "replied", "no_response", "bounced"],
+            "additionalProperties": false
+          },
+          "overall_summary": { "type": "string" }
+        },
+        "required": ["tracked_leads", "engagement_summary", "overall_summary"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

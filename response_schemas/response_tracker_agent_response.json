@@ -1,0 +1,46 @@
+{
+  "agent_name": "Response Tracker Agent",
+  "agent_id": "6996245da552b02becc38df5",
+  "description": "Fetches recent Gmail responses for outreach threads, classifies lead engagement status (replied, no response, bounced), and summarizes engagement",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "tracked_leads": [
+      {
+        "lead_name": "string",
+        "email": "string",
+        "status": "string",
+        "last_response_date": "string",
+        "response_summary": "string",
+        "recommended_action": "string"
+      }
+    ],
+    "engagement_summary": {
+      "total_tracked": "number",
+      "replied": "number",
+      "no_response": "number",
+      "bounced": "number"
+    },
+    "overall_summary": "string"
+  },
+  "example_response": {
+    "tracked_leads": [
+      {
+        "lead_name": "sample string",
+        "email": "sample string",
+        "status": "sample string",
+        "last_response_date": "sample string",
+        "response_summary": "sample string",
+        "recommended_action": "sample string"
+      }
+    ],
+    "engagement_summary": {
+      "total_tracked": 0,
+      "replied": 0,
+      "no_response": 0,
+      "bounced": 0
+    },
+    "overall_summary": "sample string"
+  }
+}

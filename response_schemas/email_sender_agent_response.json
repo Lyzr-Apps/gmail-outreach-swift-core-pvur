@@ -1,0 +1,42 @@
+{
+  "agent_name": "Email Sender Agent",
+  "agent_id": "6996245d35f3c2890b9ba1ed",
+  "description": "Sends approved email drafts via Gmail and schedules follow-up emails based on the defined cadence",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "send_status": "string",
+    "sent_email": {
+      "recipient": "string",
+      "subject": "string",
+      "sent_at": "string"
+    },
+    "follow_up_drafts": [
+      {
+        "sequence_number": "number",
+        "subject": "string",
+        "scheduled_date": "string",
+        "draft_status": "string"
+      }
+    ],
+    "summary": "string"
+  },
+  "example_response": {
+    "send_status": "sample string",
+    "sent_email": {
+      "recipient": "sample string",
+      "subject": "sample string",
+      "sent_at": "sample string"
+    },
+    "follow_up_drafts": [
+      {
+        "sequence_number": 0,
+        "subject": "sample string",
+        "scheduled_date": "sample string",
+        "draft_status": "sample string"
+      }
+    ],
+    "summary": "sample string"
+  }
+}

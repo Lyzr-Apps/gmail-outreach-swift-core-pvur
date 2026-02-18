@@ -1,0 +1,25 @@
+{
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "LeadPersonalizationResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "company_overview": { "type": "string" },
+          "recent_news": { "type": "string" },
+          "industry_trends": { "type": "string" },
+          "role_analysis": { "type": "string" },
+          "conversation_hooks": { "type": "array", "items": { "type": "string" } },
+          "personalization_summary": { "type": "string" }
+        },
+        "required": ["company_overview", "recent_news", "industry_trends", "role_analysis", "conversation_hooks", "personalization_summary"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

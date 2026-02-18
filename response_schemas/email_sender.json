@@ -1,0 +1,45 @@
+{
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "EmailSenderResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "send_status": { "type": "string" },
+          "sent_email": {
+            "type": "object",
+            "properties": {
+              "recipient": { "type": "string" },
+              "subject": { "type": "string" },
+              "sent_at": { "type": "string" }
+            },
+            "required": ["recipient", "subject", "sent_at"],
+            "additionalProperties": false
+          },
+          "follow_up_drafts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sequence_number": { "type": "number" },
+                "subject": { "type": "string" },
+                "scheduled_date": { "type": "string" },
+                "draft_status": { "type": "string" }
+              },
+              "required": ["sequence_number", "subject", "scheduled_date", "draft_status"],
+              "additionalProperties": false
+            }
+          },
+          "summary": { "type": "string" }
+        },
+        "required": ["send_status", "sent_email", "follow_up_drafts", "summary"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

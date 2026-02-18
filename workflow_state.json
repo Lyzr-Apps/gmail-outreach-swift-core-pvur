@@ -1,0 +1,27 @@
+{
+  "agents": {
+    "outreach_coordinator": {
+      "agent_id": "6996242277cd235a2c9b44ee",
+      "type": "manager",
+      "managed_agents": ["6996240eea2a1dbb3c02d6e9", "6996240fa58ce7c35cc7c28a"]
+    },
+    "lead_personalization": {
+      "agent_id": "6996240eea2a1dbb3c02d6e9",
+      "type": "sub-agent"
+    },
+    "email_drafting": {
+      "agent_id": "6996240fa58ce7c35cc7c28a",
+      "type": "sub-agent"
+    },
+    "email_sender": {
+      "agent_id": "6996245d35f3c2890b9ba1ed",
+      "type": "independent",
+      "tools": ["GMAIL_SEND_EMAIL", "GMAIL_CREATE_EMAIL_DRAFT"]
+    },
+    "response_tracker": {
+      "agent_id": "6996245da552b02becc38df5",
+      "type": "independent",
+      "tools": ["GMAIL_FETCH_EMAILS", "GMAIL_FETCH_MESSAGE_BY_THREAD_ID"]
+    }
+  }
+}
